@@ -13,6 +13,8 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
+  padding:24px;
+  box-sizing:border-box;
   background: linear-gradient(135deg,#ff9ac7,#b9a4ff);
   opacity:0;
   visibility:hidden;
@@ -76,6 +78,18 @@ body{
   max-width:720px;
   width:calc(100% - 60px);
   z-index:2;
+  max-height:70vh;
+  overflow:auto;
+}
+
+#screen3 .card{
+  max-width:620px;
+  width:calc(100% - 120px);
+}
+
+#screen3 .card p{
+  text-wrap-style: pretty;
+  text-wrap: pretty;
 }
 
 #photo-collage{
@@ -230,6 +244,13 @@ button:active{
   .card{
     padding:28px;
     width:calc(100% - 32px);
+    max-height:68vh;
+  }
+
+  #screen3 .card{
+    max-width:520px;
+    width:calc(100% - 80px);
+    max-height:62vh;
   }
 
   .title{
@@ -251,8 +272,9 @@ button:active{
   }
 
   p{
-    font-size:12px;
+    font-size:10px;
     line-height:1.5;
+    font-family: cursive;
   }
 
   button{
@@ -266,6 +288,12 @@ button:active{
     height:98px;
     padding:6px;
   }
+
+  .buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
 }
 
 @media (max-width: 480px){
@@ -274,15 +302,21 @@ button:active{
   }
 
   .title{
-    font-size:32px;
+    font-size:28px;
   }
 
   .side-heart{
-    font-size:32px;
+    font-size:28px;
   }
 
   .card{
     padding:22px;
+    max-height:64vh;
+  }
+
+  #screen3 .card{
+    width:calc(100% - 48px);
+    max-height:58vh;
   }
 
   .buttons{
@@ -293,5 +327,14 @@ button:active{
     width:110px;
     height:82px;
     padding:5px;
+  }
+
+  .prompt{
+    font-size:12px;
+  }
+
+  p{
+    font-size:10px;
+    font-family: cursive;
   }
 }

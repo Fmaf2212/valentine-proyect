@@ -141,18 +141,18 @@ function startCollage(){
   const collageRoot = collage.parentElement;
   const cardElement = collageRoot.querySelector(".card");
   const positions = [
-    { x:8, y:12, r:-6 },
-    { x:28, y:8, r:5 },
-    { x:52, y:14, r:-4 },
-    { x:72, y:10, r:7 },
-    { x:12, y:42, r:6 },
-    { x:36, y:36, r:-8 },
-    { x:62, y:40, r:4 },
-    { x:78, y:38, r:-5 },
-    { x:10, y:68, r:-3 },
-    { x:34, y:70, r:6 },
-    { x:58, y:66, r:-7 },
-    { x:76, y:70, r:5 }
+    { x:2, y:10, r:-6 },
+    { x:20, y:6, r:5 },
+    { x:48, y:8, r:-4 },
+    { x:80, y:8, r:7 },
+    { x:4, y:34, r:6 },
+    { x:22, y:36, r:-8 },
+    { x:76, y:36, r:4 },
+    { x:90, y:34, r:-5 },
+    { x:4, y:66, r:-3 },
+    { x:22, y:70, r:6 },
+    { x:74, y:68, r:-7 },
+    { x:90, y:70, r:5 }
   ];
 
   function shuffle(list){
@@ -183,7 +183,10 @@ function startCollage(){
 
     const rootRect = collageRoot.getBoundingClientRect();
     const cardRect = cardElement.getBoundingClientRect();
-    const cardPadding = 16;
+    const isMobile = rootRect.width <= 768;
+    const cardPadding = isMobile ? 6 : 16;
+    const frameWidth = isMobile ? 110 : 160;
+    const frameHeight = isMobile ? 82 : 120;
     const blocked = {
       left: cardRect.left - rootRect.left - cardPadding,
       top: cardRect.top - rootRect.top - cardPadding,
@@ -201,8 +204,6 @@ function startCollage(){
     for(let i=0;i<batch.length;i++){
       const frame = document.createElement("div");
       frame.className = "photo-frame";
-      const frameWidth = frame.offsetWidth || 160;
-      const frameHeight = frame.offsetHeight || 120;
 
       let chosen = null;
       for(let p=0;p<posList.length;p++){
@@ -216,7 +217,7 @@ function startCollage(){
         }
       }
 
-      if(!chosen){
+      if(!chosen && posList.length){
         chosen = posList.shift();
       }
 
