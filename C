@@ -1,0 +1,122 @@
+# AGENTS.md
+
+This repository is a small static web experience (HTML/CSS/JS) with no build system.
+Use these notes when making changes as an automated agent.
+
+## Quick Facts
+- Project type: static site, no bundler
+- Languages: HTML, CSS, vanilla JavaScript
+- Entry point: `index.html`
+- Runtime: browser only
+
+## Build, Lint, Test
+There is no configured build, lint, or test tool in this repo.
+If you add tooling, update this section accordingly.
+
+### Run the app (manual)
+- Open `index.html` directly in a browser
+- Or serve the folder to avoid file:// quirks:
+  - `python -m http.server 8000`
+  - Then visit `http://localhost:8000/`
+
+### Lint
+- No linter configured
+
+### Tests
+- No test framework configured
+- Single test: not applicable
+
+### Manual checks (recommended)
+- Load `index.html` and confirm the three screens flow correctly
+- Hover the “No” button and verify it moves and sparkles render
+- Click “Sí” and verify hearts fall continuously
+- Check the browser console for errors
+
+## Cursor / Copilot Rules
+- No `.cursorrules` found
+- No `.cursor/rules/` directory found
+- No `.github/copilot-instructions.md` found
+
+## Code Style Guidelines
+Follow the existing style in the repo unless a change is required for clarity.
+
+### General
+- Keep changes minimal and consistent with the current aesthetic
+- Prefer clarity over cleverness; this is a small, direct codebase
+- Use Spanish copy and comments to match the existing tone
+- Avoid introducing frameworks or build tooling unless requested
+
+### Formatting
+- Indentation: 2 spaces
+- Keep lines concise; wrap long text in HTML with `<br>` when needed
+- Use LF line endings
+
+### HTML
+- Use semantic tags where practical (`h1`, `h2`, `p`, `button`)
+- Keep structure flat and readable; avoid deep nesting
+- Use double quotes for attributes
+- IDs are used for screen toggling; keep them unique
+- Class names are short, simple, and lowercase
+
+### CSS
+- Formatting mirrors current file: selector immediately followed by `{`
+- One declaration per line; end all declarations with `;`
+- Prefer hex colors and gradients as in the existing palette
+- Keep animations in CSS using `@keyframes`
+- Use class selectors over IDs for styling
+- Avoid heavy resets; only add what is needed
+
+### JavaScript
+- Use `const` by default; `let` only when reassigned
+- Use double quotes for strings
+- Use arrow functions for event handlers and simple callbacks
+- Keep DOM logic straightforward and local
+- Avoid global pollution; use `const` bindings at top scope
+
+### Imports / Modules
+- No module system is in use; keep everything in `script.js`
+- Do not introduce bundler-specific imports without a build step
+
+### Naming Conventions
+- IDs: camelCase (`screen1`, `yesBtn`)
+- Classes: lowercase short names (`screen`, `card`, `float`)
+- Functions: camelCase verbs (`createSparkles`, `startHearts`)
+- Variables: camelCase, descriptive but short (`sparkles`, `container`)
+
+### Error Handling
+- Guard DOM lookups if you add new elements or defer scripts
+- If adding async behavior, handle failures with clear fallbacks
+- Prefer early returns over nested `if` blocks for edge cases
+
+### Accessibility and UX
+- Ensure buttons remain reachable on small screens
+- Keep color contrast readable against the gradient background
+- Use motion sparingly; avoid excessive flashing or strobing
+
+### Animation Guidelines
+- Use CSS keyframes for continuous motion
+- Use `setInterval` or `requestAnimationFrame` only when needed
+- Clean up DOM nodes after animation completes (as done now)
+
+### DOM and Events
+- Keep event listener setup near related logic
+- Avoid adding listeners in loops unless necessary
+- Use `classList` for visibility toggles (`active` class)
+
+## File Layout Notes
+- `index.html` defines three screens and references CSS/JS
+- `styles.css` contains layout, gradient, buttons, and animations
+- `script.js` handles screen switching and effects
+
+## Agent Behavior in This Repo
+- Do not delete user-visible text without explicit instruction
+- Preserve the romantic/celebratory tone in Spanish copy
+- If changing visuals, keep the overall Valentine theme
+- When adding new features, document any new commands here
+
+## If You Add Tooling (Future)
+If you introduce a formatter, linter, or tests, add:
+- Install command
+- Run command
+- Single-test command example
+- Any required config files

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Valentine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Pantalla 1 -->
+<div id="screen1" class="screen active">
+  <div class="title-wrap">
+    <span class="side-heart" aria-hidden="true">💖</span>
+    <h1 class="title">VALENTINE</h1>
+    <span class="side-heart" aria-hidden="true">💗</span>
+  </div>
+  <p class="prompt">Presiona cualquier tecla o click para comenzar...</p>
+</div>
+
+<!-- Pantalla 2 -->
+<div id="screen2" class="screen">
+  <div class="card float">
+    <h2>Kate, ¿quieres ser mi Valentine?</h2>
+    <div class="buttons">
+      <button id="yesBtn" class="yes">Sí</button>
+      <button id="noBtn" class="no">No</button>
+    </div>
+    <div id="sparkles"></div>
+  </div>
+</div>
+
+<!-- Pantalla 3 -->
+<div id="screen3" class="screen">
+  <div id="photo-collage" aria-hidden="true"></div>
+  <div class="card float">
+    <h2>¡Gracias amor por decir que sí! 💖</h2>
+    <p>
+      Mi amor, mi raw, mi vida: contigo quiero seguir escribiendo nuestra historia.<br>
+      Te amo con todo mi corazón, Kate, mi amowiii pink de blue. 💖
+    </p>
+  </div>
+
+  <div id="hearts-container"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
