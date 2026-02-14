@@ -222,6 +222,7 @@ button:active{
   font-size:28px;
   animation: pop 0.7s ease-out forwards;
   pointer-events:none;
+  z-index:3;
 }
 
 @keyframes fall{
