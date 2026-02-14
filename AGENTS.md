@@ -6,7 +6,7 @@ Use these notes when making changes as an automated agent.
 ## Quick Facts
 - Project type: static site, no bundler
 - Languages: HTML, CSS, vanilla JavaScript
-- Entry point: `index.html`
+- Entry point: `docs/index.html`
 - Runtime: browser only
 
 ## Build, Lint, Test
@@ -14,10 +14,10 @@ There is no configured build, lint, or test tool in this repo.
 If you add tooling, update this section accordingly.
 
 ### Run the app (manual)
-- Open `index.html` directly in a browser
+- Open `docs/index.html` directly in a browser
 - Or serve the folder to avoid file:// quirks:
   - `python -m http.server 8000`
-  - Then visit `http://localhost:8000/`
+  - Then visit `http://localhost:8000/docs/`
 
 ### Lint
 - No linter configured
@@ -27,9 +27,10 @@ If you add tooling, update this section accordingly.
 - Single test: not applicable
 
 ### Manual checks (recommended)
-- Load `index.html` and confirm the three screens flow correctly
+- Load `docs/index.html` and confirm the three screens flow correctly
 - Hover the “No” button and verify it moves and sparkles render
-- Click “Sí” and verify hearts fall continuously
+- Click “Sí” and verify hearts and collage run
+- Tap/click on screen3 and verify burst hearts appear
 - Check the browser console for errors
 
 ## Cursor / Copilot Rules
@@ -74,7 +75,7 @@ Follow the existing style in the repo unless a change is required for clarity.
 - Avoid global pollution; use `const` bindings at top scope
 
 ### Imports / Modules
-- No module system is in use; keep everything in `script.js`
+- No module system is in use; keep everything in `docs/script.js`
 - Do not introduce bundler-specific imports without a build step
 
 ### Naming Conventions
@@ -104,9 +105,14 @@ Follow the existing style in the repo unless a change is required for clarity.
 - Use `classList` for visibility toggles (`active` class)
 
 ## File Layout Notes
-- `index.html` defines three screens and references CSS/JS
-- `styles.css` contains layout, gradient, buttons, and animations
-- `script.js` handles screen switching and effects
+- `docs/index.html` defines three screens and references CSS/JS
+- `docs/styles.css` contains layout, gradient, buttons, and animations
+- `docs/script.js` handles screen switching and effects
+- `docs/images/` holds the photo assets
+
+## GitHub Pages
+- Use Pages source: branch `main`, folder `/docs`
+- Public URL will load `docs/index.html`
 
 ## Agent Behavior in This Repo
 - Do not delete user-visible text without explicit instruction
