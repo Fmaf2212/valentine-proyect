@@ -272,9 +272,9 @@ button:active{
   }
 
   p{
-    font-size:10px;
+    font-size:12px;
     line-height:1.5;
-    font-family: cursive;
+    font-family: "Verdana", "Arial", sans-serif;
   }
 
   button{
@@ -334,7 +334,7 @@ button:active{
   }
 
   p{
-    font-size:10px;
-    font-family: cursive;
+    font-size:12px;
+    font-family: "Verdana", "Arial", sans-serif;
   }
 }
